@@ -24,7 +24,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount(){
-        return 2;
+        return 3;
     }
 
     @Override
@@ -53,6 +53,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                     @Override
                     public void onClick(View v) {
                         mActivity.startActivity(new Intent(mActivity, DotsActivity.class));
+                    }
+                });
+                break;
+
+            case 2:
+                vh.tv.setText("Scale animation");
+                vh.parent.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mActivity.startActivity(new Intent(mActivity, ScaleActivity.class));
                     }
                 });
                 break;

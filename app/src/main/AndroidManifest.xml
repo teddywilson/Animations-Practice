@@ -18,6 +18,7 @@
 
         <activity android:name=".FadeActivity" />
         <activity android:name=".DotsActivity" />
+        <activity android:name=".ScaleActivity" />
     </application>
 
 </manifest>

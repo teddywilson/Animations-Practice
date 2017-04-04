@@ -37,5 +37,4 @@ public class FadeActivity extends Activity{
         isFaded = !isFaded;
     }
 
-
 }

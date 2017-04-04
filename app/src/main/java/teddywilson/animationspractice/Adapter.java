@@ -24,7 +24,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount(){
-        return 3;
+        return 4;
     }
 
     @Override
@@ -63,6 +63,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                     @Override
                     public void onClick(View v) {
                         mActivity.startActivity(new Intent(mActivity, ScaleActivity.class));
+                    }
+                });
+                break;
+
+            case 3:
+                vh.tv.setText("View pager");
+                vh.parent.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mActivity.startActivity(new Intent(mActivity, ViewPagerActivity.class));
                     }
                 });
                 break;

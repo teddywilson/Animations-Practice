@@ -19,6 +19,7 @@
         <activity android:name=".FadeActivity" />
         <activity android:name=".DotsActivity" />
         <activity android:name=".ScaleActivity" />
+        <activity android:name=".ViewPagerActivity" />
     </application>
 
 </manifest>

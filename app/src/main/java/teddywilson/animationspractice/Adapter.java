@@ -24,7 +24,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount(){
-        return 1;
+        return 2;
     }
 
     @Override
@@ -47,6 +47,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 });
                 break;
 
+            case 1:
+                vh.tv.setText("Dots animations");
+                vh.parent.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mActivity.startActivity(new Intent(mActivity, DotsActivity.class));
+                    }
+                });
+                break;
         }
     }
 

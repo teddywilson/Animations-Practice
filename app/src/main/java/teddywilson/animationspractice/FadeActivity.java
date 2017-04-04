@@ -1,10 +1,10 @@
 package teddywilson.animationspractice;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 
 /**
  * Created by Theodore Wilson on 4/3/17.
@@ -17,59 +17,23 @@ public class FadeActivity extends Activity{
     boolean isFaded = false;
     int duration = 1500;
 
-    AlphaAnimation fadeOut, fadeIn;
-
     @Override
     public void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_fade);
         fadeView = findViewById(R.id.view_to_fade);
-
-        fadeOut = new AlphaAnimation(1.0f, 0.f);
-        fadeOut.setDuration(duration);
-        fadeOut.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                fadeView.setAlpha(0.0f);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
-        fadeIn = new AlphaAnimation(0.0f, 1.0f);
-        fadeIn.setDuration(duration);
-        fadeIn.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                fadeView.setAlpha(1.0f);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
     }
 
     public void toggleFade(View v){
+        AnimatorSet set = new AnimatorSet();
         if(isFaded){
-            fadeView.startAnimation(fadeIn);
+            ObjectAnimator fadeInAnim = ObjectAnimator.ofFloat(fadeView, "alpha", 1.0f);
+            set.play(fadeInAnim);
         } else {
-            fadeView.startAnimation(fadeOut);
+            ObjectAnimator fadeOutAnim = ObjectAnimator.ofFloat(fadeView, "alpha", 0.0f);
+            set.play(fadeOutAnim);
         }
+        set.start();
         isFaded = !isFaded;
     }
 

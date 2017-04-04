@@ -14,7 +14,8 @@ import android.view.View;
 
 public class CircleView extends View {
 
-    protected Paint mPaint;
+    private final int RADIUS = 23;
+    private Paint mPaint;
 
     public CircleView(Context context) {
         super(context);
@@ -30,12 +31,11 @@ public class CircleView extends View {
         super(context, attrs, defStyleAttr);
     }
 
-    private final int RADIUS = 20;
-
     @Override
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
         canvas.drawCircle(RADIUS, RADIUS, RADIUS, mPaint);
+        setMeasuredDimension(RADIUS, RADIUS);
     }
 
 }

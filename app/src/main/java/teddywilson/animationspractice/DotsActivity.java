@@ -31,6 +31,14 @@ public class DotsActivity extends Activity{
     final int ANIM_DURATION = 200;
     int yOffset = 0;
 
+    private enum State {
+        LINE,
+        ZIGZAG,
+        CIRCLE
+    }
+    private State state = State.LINE;
+    private static String STATE = "state";
+
     @Override
     public void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
@@ -51,6 +59,32 @@ public class DotsActivity extends Activity{
             dots.add(cv);
             parent.addView(cv);
         }
+
+        if(savedInstance == null) {
+            line(null);
+        } else {
+            state = (State) savedInstance.getSerializable(STATE);
+            if(state == null){
+                state = State.LINE;
+            }
+            switch (state){
+                case LINE:
+                    line(null);
+                    break;
+                case ZIGZAG:
+                    zigzag(null);
+                    break;
+                case CIRCLE:
+                    circle(null);
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle bundle){
+        bundle.putSerializable(STATE, state);
+        super.onSaveInstanceState(bundle);
     }
 
     public void zigzag(View view){
@@ -76,6 +110,7 @@ public class DotsActivity extends Activity{
             set.playTogether(x, y);
             set.start();
         }
+        state = State.ZIGZAG;
     }
 
     public void line(View view){
@@ -91,6 +126,7 @@ public class DotsActivity extends Activity{
             set.playTogether(x, y);
             set.start();
         }
+        state = State.LINE;
     }
 
     public void circle(View view) {
@@ -110,7 +146,7 @@ public class DotsActivity extends Activity{
             set.playTogether(xAnim, yAnim);
             set.start();
         }
-
+        state = State.CIRCLE;
     }
 
 }

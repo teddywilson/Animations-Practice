@@ -59,6 +59,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             case 5:
                 vh.tv.setText("Shared image");
                 break;
+
+            case 6:
+                vh.tv.setText("Gesture Detector");
+                break;
         }
     }
 

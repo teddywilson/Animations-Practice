@@ -2,46 +2,69 @@ package teddywilson.animationspractice;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.view.GestureDetectorCompat;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.widget.TextView;
 
 /**
  * Created by Theodore Wilson on 4/6/17.
  * © Toeboat LLC
  */
 
-public class GestureActivity extends Activity {
+public class GestureActivity extends Activity implements GestureDetector.OnGestureListener {
 
-    private final String DEBUG_TAG = "Debug";
+    private GestureDetectorCompat gestureDetectorCompat;
+    private TextView textView;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gesture);
+
+        textView = (TextView) findViewById(R.id.text_view);
+        gestureDetectorCompat = new GestureDetectorCompat(this, this);
+
+    }
+
+    @Override
+    public boolean onDown(MotionEvent e) {
+        textView.setText("On Down");
+        return true;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent e) {
+        textView.setText("On Show Press");
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        textView.setText("On Single Tap Up");
+        return true;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        textView.setText("On Scroll");
+        return true;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+        textView.setText("On Long Press");
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        textView.setText("On Fling");
+        return true;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
-        int action = event.getActionMasked();
-        switch (action){
-            case (MotionEvent.ACTION_DOWN) :
-                Log.d(DEBUG_TAG,"Action was DOWN");
-                return true;
-            case (MotionEvent.ACTION_MOVE) :
-                Log.d(DEBUG_TAG,"Action was MOVE");
-                return true;
-            case (MotionEvent.ACTION_UP) :
-                Log.d(DEBUG_TAG,"Action was UP");
-                return true;
-            case (MotionEvent.ACTION_CANCEL) :
-                Log.d(DEBUG_TAG,"Action was CANCEL");
-                return true;
-            case (MotionEvent.ACTION_OUTSIDE) :
-                Log.d(DEBUG_TAG,"Movement occurred outside bounds " + "of current screen element");
-                return true;
-            default :
-                return super.onTouchEvent(event);
-        }
+        gestureDetectorCompat.onTouchEvent(event);
+        return super.onTouchEvent(event);
     }
 
 }

@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
                     case 5:
                         startActivity(new Intent(MainActivity.this, SharedImgActivityA.class));
                         break;
+
+                    case 6:
+                        startActivity(new Intent(MainActivity.this, GestureActivity.class));
+                        break;
                 }
             }
 

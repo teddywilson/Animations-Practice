@@ -24,7 +24,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount(){
-        return 4;
+        return 5;
     }
 
     @Override
@@ -73,6 +73,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                     @Override
                     public void onClick(View v) {
                         mActivity.startActivity(new Intent(mActivity, ViewPagerActivity.class));
+                    }
+                });
+                break;
+
+            case 4:
+                vh.tv.setText("Expanding FAB");
+                vh.parent.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mActivity.startActivity(new Intent(mActivity, ExpandingFABActivity.class));
                     }
                 });
                 break;

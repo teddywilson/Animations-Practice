@@ -20,6 +20,8 @@
         <activity android:name=".DotsActivity" />
         <activity android:name=".ScaleActivity" />
         <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".ExpandingFABActivity" />
+        <activity android:name=".PinkActivity" />
     </application>
 
 </manifest>

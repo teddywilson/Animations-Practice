@@ -1,7 +1,6 @@
 package teddywilson.animationspractice;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,52 +38,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         switch (pos){
             case 0:
                 vh.tv.setText("Fade in/out");
-                vh.parent.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mActivity.startActivity(new Intent(mActivity, FadeActivity.class));
-                    }
-                });
                 break;
 
             case 1:
                 vh.tv.setText("Dots animations");
-                vh.parent.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mActivity.startActivity(new Intent(mActivity, DotsActivity.class));
-                    }
-                });
                 break;
 
             case 2:
                 vh.tv.setText("Scale animation");
-                vh.parent.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mActivity.startActivity(new Intent(mActivity, ScaleActivity.class));
-                    }
-                });
                 break;
 
             case 3:
                 vh.tv.setText("View pager");
-                vh.parent.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mActivity.startActivity(new Intent(mActivity, ViewPagerActivity.class));
-                    }
-                });
                 break;
 
             case 4:
                 vh.tv.setText("Expanding FAB");
-                vh.parent.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mActivity.startActivity(new Intent(mActivity, ExpandingFABActivity.class));
-                    }
-                });
                 break;
         }
     }

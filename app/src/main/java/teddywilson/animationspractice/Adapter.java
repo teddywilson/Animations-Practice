@@ -23,7 +23,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount(){
-        return 5;
+        return 6;
     }
 
     @Override
@@ -54,6 +54,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
             case 4:
                 vh.tv.setText("Expanding FAB");
+                break;
+
+            case 5:
+                vh.tv.setText("Shared image");
                 break;
         }
     }

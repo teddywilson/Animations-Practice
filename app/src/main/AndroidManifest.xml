@@ -22,6 +22,8 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".ExpandingFABActivity" />
         <activity android:name=".PinkActivity" />
+        <activity android:name=".SharedImgActivityA" />
+        <activity android:name=".SharedImgActivityB" />
     </application>
 
 </manifest>

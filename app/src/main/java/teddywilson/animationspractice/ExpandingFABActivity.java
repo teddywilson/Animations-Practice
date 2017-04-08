@@ -11,7 +11,9 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.FrameLayout;
 
 /**
  * Created by Theodore Wilson on 4/7/17.
@@ -23,13 +25,15 @@ public class ExpandingFABActivity extends Activity implements View.OnClickListen
     private FloatingActionButton fab;
     private DisplayMetrics dm;
     private int fabWidth, fabHeight;
+    private FrameLayout viewRoot;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         overridePendingTransition(0, 0);
-
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_expanding_fab);
+        viewRoot = (FrameLayout) findViewById(R.id.root);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.post(new Runnable() {
             @Override
@@ -46,6 +50,22 @@ public class ExpandingFABActivity extends Activity implements View.OnClickListen
 
     @Override
     public void onClick(View v){
+        revealWithAnimatorUtils();
+    }
+
+    private void revealWithAnimatorUtils(){
+        AnimatorSet set = new AnimatorSet();
+        final int finalRadius = (int) Math.hypot(viewRoot.getWidth(), viewRoot.getHeight());
+        Animator revealAnim = ViewAnimationUtils.createCircularReveal(viewRoot, (int) fab.getX() + fabWidth/2,
+                (int) fab.getY() + fabHeight/2, fabWidth/2, finalRadius);
+        viewRoot.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(fab, "alpha", 0f);
+        set.playTogether(revealAnim, fadeOut);
+        set.setDuration(450);
+        set.start();
+    }
+
+    private void revealWithObjectAnimtor(){
         AnimatorSet set = new AnimatorSet();
         ObjectAnimator xAnim = ObjectAnimator.ofFloat(fab, "x", -dm.widthPixels);
         ObjectAnimator yAnim = ObjectAnimator.ofFloat(fab, "y", -dm.heightPixels);
@@ -82,6 +102,5 @@ public class ExpandingFABActivity extends Activity implements View.OnClickListen
 
         set.start();
     }
-
 
 }

@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
                     case 6:
                         startActivity(new Intent(MainActivity.this, GestureActivity.class));
                         break;
+
+                    case 7:
+                        startActivity(new Intent(MainActivity.this, TouchInterceptActivity.class));
+                        break;
+
+                    case 8:
+                        startActivity(new Intent(MainActivity.this, ExpandTouchActivity.class));
+                        break;
                 }
             }
 

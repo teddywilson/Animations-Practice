@@ -62,6 +62,13 @@ public class ExpandingFABActivity extends Activity implements View.OnClickListen
         ObjectAnimator fadeOut = ObjectAnimator.ofFloat(fab, "alpha", 0f);
         set.playTogether(revealAnim, fadeOut);
         set.setDuration(450);
+        set.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                startActivity(new Intent(ExpandingFABActivity.this, PinkActivity.class));
+            }
+        });
         set.start();
     }
 

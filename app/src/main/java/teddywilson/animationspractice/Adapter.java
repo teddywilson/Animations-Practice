@@ -23,7 +23,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount(){
-        return 7;
+        return 9;
     }
 
     @Override
@@ -62,6 +62,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
             case 6:
                 vh.tv.setText("Gesture Detector");
+                break;
+
+            case 7:
+                vh.tv.setText("Mean Relative Layout :[");
+                break;
+
+            case 8:
+                vh.tv.setText("Expanded Touch Delegate");
                 break;
         }
     }

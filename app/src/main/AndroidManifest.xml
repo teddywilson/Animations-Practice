@@ -26,6 +26,8 @@
         <activity android:name=".SharedImgActivityA" />
         <activity android:name=".SharedImgActivityB" />
         <activity android:name=".GestureActivity" />
+        <activity android:name=".TouchInterceptActivity" />
+        <activity android:name=".ExpandTouchActivity" />
 
     </application>
 

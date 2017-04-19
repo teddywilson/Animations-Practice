@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import teddywilson.animationspractice.adapter.MainActivityAdapter;
 import teddywilson.animationspractice.listeners.RecyclerViewListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setAdapter(new Adapter(this));
+        recyclerView.setAdapter(new MainActivityAdapter(this));
         recyclerView.addOnItemTouchListener(new RecyclerViewListener(this, recyclerView, new RecyclerViewListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -55,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
                     case 8:
                         startActivity(new Intent(MainActivity.this, ExpandTouchActivity.class));
+                        break;
+
+                    case 9:
+                        startActivity(new Intent(MainActivity.this, CardFlipActivity.class));
+                        break;
+
+                    case 10:
+                        startActivity(new Intent(MainActivity.this, PhotoGalleryActivity.class));
                         break;
                 }
             }

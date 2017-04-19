@@ -1,4 +1,4 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.adapter;
 
 import android.app.Activity;
 import android.support.v7.widget.CardView;
@@ -8,22 +8,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import teddywilson.animationspractice.R;
+
 /**
  * Created by Theodore Wilson on 4/3/17.
  * © Toeboat LLC
  */
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.ViewHolder> {
 
     Activity mActivity;
 
-    public Adapter(Activity activity) {
+    public MainActivityAdapter(Activity activity) {
         mActivity = activity;
     }
 
     @Override
     public int getItemCount(){
-        return 9;
+        return 11;
     }
 
     @Override
@@ -70,6 +72,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
             case 8:
                 vh.tv.setText("Expanded Touch Delegate");
+                break;
+
+            case 9:
+                vh.tv.setText("Card Flip");
+                break;
+
+            case 10:
+                vh.tv.setText("Photo Gallery");
                 break;
         }
     }

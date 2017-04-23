@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:layout_marginEnd="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:transitionName="random"
+        android:text="hello world how are you doing today? did you have a good day? i bet you did, because you're a big world and there's a lot to do. hm."/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="form a"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:id="@+id/edit_text_a"
+        android:transitionName="editTextA"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="form b"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:id="@+id/edit_text_b"
+        android:transitionName="editTextB"
+        />
+
+    <teddywilson.animationspractice.views.DoubleEditTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint1="yes"
+        app:hint2="no"/>
+
+</LinearLayout>

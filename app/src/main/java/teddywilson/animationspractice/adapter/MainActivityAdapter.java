@@ -25,7 +25,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
 
     @Override
     public int getItemCount(){
-        return 11;
+        return 15;
     }
 
     @Override
@@ -79,7 +79,23 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
                 break;
 
             case 10:
-                vh.tv.setText("Photo Gallery");
+                vh.tv.setText("Photo Gallery (not finished)");
+                break;
+
+            case 11:
+                vh.tv.setText("Drag activity (not finished)");
+                break;
+
+            case 12:
+                vh.tv.setText("Snake??");
+                break;
+
+            case 13:
+                vh.tv.setText("Basic transitions");
+                break;
+
+            case 14:
+                vh.tv.setText("Scene stuff");
                 break;
         }
     }

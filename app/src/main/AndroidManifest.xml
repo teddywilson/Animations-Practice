@@ -19,20 +19,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".FadeActivity" />
-        <activity android:name=".DotsActivity" />
-        <activity android:name=".ScaleActivity" />
-        <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".ExpandingFABActivity" />
-        <activity android:name=".PinkActivity" />
-        <activity android:name=".SharedImgActivityA" />
-        <activity android:name=".SharedImgActivityB" />
-        <activity android:name=".GestureActivity" />
-        <activity android:name=".TouchInterceptActivity" />
-        <activity android:name=".ExpandTouchActivity" />
-        <activity android:name=".CardFlipActivity" />
-        <activity android:name=".PhotoGalleryActivity" />
-        <activity android:name=".PhotoDetailsActivity" />
+        <activity android:name=".activities.propertyAnimator.FadeActivity" />
+        <activity android:name=".activities.propertyAnimator.DotsActivity" />
+        <activity android:name=".activities.ScaleActivity" />
+        <activity android:name=".activities.ViewPagerActivity" />
+        <activity android:name=".activities.propertyAnimator.ExpandingFABActivity" />
+        <activity android:name=".activities.PinkActivity" />
+        <activity android:name=".activities.transitions.SharedImgActivityA" />
+        <activity android:name=".activities.transitions.SharedImgActivityB" />
+        <activity android:name=".activities.gestures.GestureActivity" />
+        <activity android:name=".activities.gestures.TouchInterceptActivity" />
+        <activity android:name=".activities.gestures.ExpandTouchActivity" />
+        <activity android:name=".activities.CardFlipActivity" />
+        <activity android:name=".activities.PhotoGalleryActivity" />
+        <activity android:name=".activities.PhotoDetailsActivity" />
+        <activity android:name=".activities.gestures.DragActivity" />
+        <activity android:name=".activities.propertyAnimator.SnakeActivity" />
+        <activity android:name=".activities.transitions.TransitionsBasicActivityA" />
+        <activity android:name=".activities.transitions.TransitionsBasicActivityB" />
+        <activity android:name=".activities.scenes.SceneActivity" />
 
     </application>
 

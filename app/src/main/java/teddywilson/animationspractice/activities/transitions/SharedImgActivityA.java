@@ -1,4 +1,4 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities.transitions;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+
+import teddywilson.animationspractice.R;
 
 /**
  * Created by Theodore Wilson on 4/7/17.
@@ -24,6 +26,7 @@ public class SharedImgActivityA extends Activity {
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.activity_shared_img_a);
         imgView = (ImageView) findViewById(R.id.image_view);
+
     }
 
     public void go(View v){
@@ -35,6 +38,7 @@ public class SharedImgActivityA extends Activity {
         } else {
             startActivity(intent);
         }
+
     }
 
 

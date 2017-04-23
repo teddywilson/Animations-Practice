@@ -1,4 +1,4 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import teddywilson.animationspractice.R;
 import teddywilson.animationspractice.adapter.PhotoGalleryAdapter;
 import teddywilson.animationspractice.listeners.RecyclerViewListener;
 

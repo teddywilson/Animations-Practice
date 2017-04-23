@@ -1,4 +1,4 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities.propertyAnimator;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import teddywilson.animationspractice.R;
 import teddywilson.animationspractice.views.CircleView;
 
 /**

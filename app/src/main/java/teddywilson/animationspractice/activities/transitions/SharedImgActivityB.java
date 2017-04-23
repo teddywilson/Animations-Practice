@@ -1,9 +1,11 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities.transitions;
 
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import teddywilson.animationspractice.R;
 
 /**
  * Created by Theodore Wilson on 4/7/17.

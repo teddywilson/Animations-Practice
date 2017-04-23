@@ -1,4 +1,4 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+
+import teddywilson.animationspractice.R;
 
 /**
  * Created by Theodore Wilson on 4/19/17.

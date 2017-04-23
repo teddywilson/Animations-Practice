@@ -1,10 +1,12 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities.propertyAnimator;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+
+import teddywilson.animationspractice.R;
 
 /**
  * Created by Theodore Wilson on 4/3/17.

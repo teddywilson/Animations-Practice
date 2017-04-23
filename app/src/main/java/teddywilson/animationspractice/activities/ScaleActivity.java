@@ -1,4 +1,4 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+
+import teddywilson.animationspractice.R;
 
 /**
  * Created by Theodore Wilson on 4/4/17.

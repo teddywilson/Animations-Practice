@@ -1,4 +1,4 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities.gestures;
 
 import android.app.Activity;
 import android.graphics.Rect;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import teddywilson.animationspractice.R;
 
 /**
  * Created by Theodore Wilson on 4/10/17.

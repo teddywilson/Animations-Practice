@@ -1,19 +1,24 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities.propertyAnimator;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
+import android.transition.TransitionManager;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
+
+import teddywilson.animationspractice.R;
+import teddywilson.animationspractice.activities.PinkActivity;
 
 /**
  * Created by Theodore Wilson on 4/7/17.
@@ -50,7 +55,7 @@ public class ExpandingFABActivity extends Activity implements View.OnClickListen
 
     @Override
     public void onClick(View v){
-        revealWithAnimatorUtils();
+        revealFromCenter();
     }
 
     private void revealWithAnimatorUtils(){
@@ -72,42 +77,41 @@ public class ExpandingFABActivity extends Activity implements View.OnClickListen
         set.start();
     }
 
-    private void revealWithObjectAnimtor(){
-        AnimatorSet set = new AnimatorSet();
-        ObjectAnimator xAnim = ObjectAnimator.ofFloat(fab, "x", -dm.widthPixels);
-        ObjectAnimator yAnim = ObjectAnimator.ofFloat(fab, "y", -dm.heightPixels);
-        final int radius = (int) (((int) Math.sqrt(Math.pow(dm.widthPixels*2, 2)+Math.pow(dm.heightPixels*2, 2))) * 1.5);
-
-        ValueAnimator xScaleAnim = ValueAnimator.ofInt(fabWidth, radius);
-        xScaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    private void revealFromCenter(){
+        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.change_bounds_with_arc);
+        transition.addListener(new Transition.TransitionListener() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                fab.getLayoutParams().width = (Integer) animation.getAnimatedValue();
-                fab.setLayoutParams(fab.getLayoutParams());
+            public void onTransitionStart(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionEnd(Transition transition) {
+                revealWithAnimatorUtils();
+            }
+
+            @Override
+            public void onTransitionCancel(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionPause(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionResume(Transition transition) {
+
             }
         });
 
-        ValueAnimator yScaleAnim = ValueAnimator.ofInt(fabHeight, radius);
-        yScaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                fab.getLayoutParams().height = (Integer) animation.getAnimatedValue();
-                fab.setLayoutParams(fab.getLayoutParams());
-            }
-        });
+        TransitionManager.beginDelayedTransition(viewRoot, transition);
+        FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) fab.getLayoutParams();
+        lp.gravity = Gravity.CENTER;
+        fab.setLayoutParams(lp);
 
-        set.setDuration(300);
-        set.setInterpolator(new AccelerateDecelerateInterpolator());
-        set.playTogether(xAnim, yAnim, xScaleAnim, yScaleAnim);
-        set.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                startActivity(new Intent(ExpandingFABActivity.this, PinkActivity.class));
-            }
-        });
-
-        set.start();
     }
+
 
 }

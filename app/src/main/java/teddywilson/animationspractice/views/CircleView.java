@@ -35,7 +35,12 @@ public class CircleView extends View {
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
         canvas.drawCircle(RADIUS, RADIUS, RADIUS, mPaint);
-        setMeasuredDimension(RADIUS, RADIUS);
+    }
+
+    @Override
+    public void onMeasure(int w, int h){
+        super.onMeasure(w, h);
+        setMeasuredDimension(RADIUS*2, RADIUS*2);
     }
 
 }

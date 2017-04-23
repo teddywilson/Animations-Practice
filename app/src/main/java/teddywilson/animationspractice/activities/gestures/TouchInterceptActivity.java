@@ -1,8 +1,9 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities.gestures;
 
 import android.app.Activity;
 import android.os.Bundle;
 
+import teddywilson.animationspractice.R;
 import teddywilson.animationspractice.views.MeanRelativeLayout;
 
 /**

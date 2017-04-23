@@ -1,7 +1,9 @@
-package teddywilson.animationspractice;
+package teddywilson.animationspractice.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import teddywilson.animationspractice.R;
 
 /**
  * Created by Theodore Wilson on 4/7/17.
